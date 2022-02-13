@@ -94,15 +94,15 @@ bool scene_intersect(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphe
         }
     }
 
-//    for (int i = 0; i < duck.nfaces(); i++) {
-//        float dist_i;
-//        if (duck.ray_triangle_intersect(i, orig, dir, dist_i) && dist_i < spheres_dist) {
-//            spheres_dist = dist_i;
-//            hit = orig + dir*dist_i;
-//            N = duck.get_normilazed(i).normalize();
-//            material = duckM;
-//        }
-//    }
+    for (int i = 0; i < duck.nfaces(); i++) {
+        float dist_i;
+        if (duck.ray_triangle_intersect(i, orig, dir, dist_i) && dist_i < spheres_dist) {
+            spheres_dist = dist_i;
+            hit = orig + dir*dist_i;
+            N = duck.get_normilazed(i).normalize();
+            material = duckM;
+        }
+    }
 
     {
         float dist_i;
